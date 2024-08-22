@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nav-bar {
+    background-color: #000000;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.TFC-logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.TFC-logo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.navigation a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.navigation a:hover {
+    color: #CCCCCC;
+    text-decoration: underline;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #181818;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 80px;
+    /* Adjust top to account for navbar height */
+    left: 0;
+    height: calc(100% - 80px);
+    /* Adjust height to account for navbar */
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 900;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.main-content {
+    margin-top: 80px;
+    /* Add top margin for navbar */
+    margin-left: 250px;
+    /* Add left margin for sidebar */
+    padding: 20px;
+    position: relative;
+}
+
+.toggle-sidebar-btn {
+    position: fixed;
+    top: 90px;
+    /* Position below the navbar */
+    left: 10px;
+    z-index: 1100;
+    /* Higher than both navbar and sidebar */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.toggle-sidebar-btn:hover {
+    background-color: #555;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+    /* Full height minus navbar and some padding */
+}
+
+.center-box {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50%;
+    max-width: 600px;
+}
+
+.center-box h2 {
+    margin-bottom: 15px;
+}
+
+.center-box p {
+    line-height: 1.6;
+    color: #333;
+}
